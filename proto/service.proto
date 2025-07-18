@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+service UltraService {
+  rpc SayHello(HelloRequest) returns (HelloReply);
+  rpc ProcessData(DataRequest) returns (DataReply);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+message DataRequest {
+  string data = 1;
+}
+
+message DataReply {
+  string processed = 1;
+}
+
